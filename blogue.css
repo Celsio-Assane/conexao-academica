@@ -1,0 +1,152 @@
+/* Top Bar */
+.top-bar {
+  background-color: #003366;
+  color: white;
+  text-align: center;
+  padding: 8px 0;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+/* Layout Principal */
+.blog-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+/* Conteúdo do Blog */
+.blog-main h1 {
+  color: #003366;
+  margin-bottom: 20px;
+}
+.post {
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+}
+.post h2 {
+  color: #005fa3;
+  font-size: 1.3rem;
+}
+.post-date {
+  color: #777;
+  font-size: 0.9rem;
+  margin: 5px 0 15px;
+}
+.post a {
+  color: #0077cc;
+  text-decoration: none;
+  font-weight: bold;
+}
+.post a:hover {
+  text-decoration: underline;
+}
+
+/* Sidebar */
+.sidebar {
+  background: #f8f8f8;
+  padding: 20px;
+  border-radius: 10px;
+}
+.sidebar h3 {
+  color: #003366;
+  margin-bottom: 10px;
+}
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+.sidebar ul li {
+  margin-bottom: 10px;
+}
+.sidebar ul a {
+  text-decoration: none;
+  color: #006699;
+}
+.sidebar ul a:hover {
+  text-decoration: underline;
+}
+
+/* Rodapé */
+/* Sidebar container */
+.sidebar {
+  margin-top: 20px;
+}
+
+.sidebar-categories, .sidebar-adsense {
+  background-color: #f0f8ff;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px; /* Espaço entre as colunas */
+}
+
+.sidebar-categories h3, .sidebar-adsense h3 {
+  color: #004080;
+  margin-bottom: 15px;
+}
+
+.sidebar-categories ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.sidebar-categories ul li {
+  margin-bottom: 10px;
+}
+
+.sidebar-categories a {
+  text-decoration: none;
+  color: #004080;
+}
+
+.sidebar-categories a:hover {
+  text-decoration: underline;
+}
+
+.adsense-placeholder {
+  background-color: #eaf4ff;
+  color: #333;
+  font-size: 0.9rem;
+  text-align: center;
+  padding: 15px;
+  border-radius: 8px;
+  font-style: italic;
+}
+
+.adsense-bar {
+  background: #f0f8ff;
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px dashed #a3c2f0;
+}
+
+.adsense-bar h3 {
+  margin-bottom: 15px;
+  color: #004080;
+  font-size: 1.1rem;
+}
+
+.adsense-placeholder {
+  background-color: #eaf4ff;
+  color: #333;
+  font-size: 0.9rem;
+  text-align: center;
+  padding: 15px;
+  border: 1px solid #b3d9ff;
+  border-radius: 8px;
+  font-style: italic;
+}
+@media (max-width: 768px) {
+  .sidebar {
+    padding: 0 15px; /* Ajusta a margem para telas menores */
+  }
+
+  .sidebar-categories, .sidebar-adsense {
+    margin-bottom: 15px; /* Menor espaçamento entre as seções em telas menores */
+  }
+}
