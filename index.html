@@ -1,115 +1,252 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="favicon.png" type="image/png">
   <title>Lançamento Oficial - Conexão Académica</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
     body {
       margin: 0;
+      padding: 20px;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: linear-gradient(135deg, #005661 50%, #006d5b 50%);
-      color: #ffffff;
+      color: #333;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       min-height: 100vh;
       text-align: center;
-      line-height: 1.6;
-      overflow: hidden;
+      box-sizing: border-box;
     }
 
     header {
-      margin-bottom: 30px;
+      margin-bottom: 20px;
     }
 
     header img {
-      width: 100px;
-      margin-bottom: 5px;
+      max-width: 100px;
+      width: 100%;
+      height: auto;
+      margin-bottom: 10px;
     }
 
     h1 {
       font-size: 2.2em;
-      color: #0c0c0c;
+      color: #ffffff;
+      margin: 0.5em 0;
     }
-
+    .logo img {
+    height: 120px;
+    }
     .slogan {
       font-style: italic;
-      color: #f9b000;
+      color: #ffffff;
+      margin-bottom: 30px;
+      opacity: 0.8;
+    }
+
+    .countdown-container {
+      width: 90%;
+      max-width: 800px;
       margin-bottom: 30px;
     }
 
-    .countdown {
-      font-size: 2em;
-      background: #e6f4ea;
-      padding: 20px;
-      border-radius: 15px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      color: #1b4332;
-      margin-bottom: 30px;
+    .countdown-title {
+      color: #f9b000;
+      font-size: 1.5em;
+      margin-bottom: 20px;
+      font-weight: 500;
+    }
+
+    .countdown-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+    }
+
+    .countdown-item {
+      background-color: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(5px);
+      border-radius: 10px;
+      padding: 20px 10px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .countdown-value {
+      font-size: 2.5em;
+      font-weight: bold;
+      color: #ffffff;
+      margin-bottom: 5px;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .countdown-label {
+      font-size: 1em;
+      color: #ffffff;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      opacity: 0.8;
     }
 
     .transmissao {
       font-size: 1.1em;
-      color: #1d3557;
-      background: #f1faee;
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.1);
       padding: 15px 25px;
-      border: 1px solid #a8dadc;
+      border: 1px solid rgba(255, 255, 255, 0.2);
       border-radius: 10px;
+      width: 90%;
+      max-width: 500px;
+      box-sizing: border-box;
+      backdrop-filter: blur(5px);
     }
 
     footer {
-      position: absolute;
-      bottom: 10px;
-      font-size: 1.0em;
-      color: #000000;
-    }
-
-    canvas {
-      position: fixed;
-      top: 0;
-      left: 0;
-      pointer-events: none;
-      z-index: 9999;
-    }
-
-    .video-container {
       position: relative;
-      padding-bottom: 56.25%;
-      height: 0;
-      overflow: hidden;
-      max-width: 100%;
-      margin-top: 20px;
+      margin-top: 30px;
+      font-size: 0.9em;
+      color: #ffffff;
+      width: 100%;
+      text-align: center;
     }
 
-    .video-container iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
+    .social-icons {
+      margin: 1rem 0;
+    }
+
+    .social-icons a {
+      margin: 0 10px;
+      color: #ffffff;
+      font-size: 1.3rem;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      transform: scale(1.2);
+      color: #f9b000;
+    }
+
+    /* Media Queries para diferentes tamanhos de tela */
+    @media only screen and (max-width: 768px) {
+      h1 {
+        font-size: 1.8em;
+      }
+
+      .countdown-title {
+        font-size: 1.3em;
+      }
+
+      .countdown-value {
+        font-size: 2em;
+      }
+
+      .countdown-label {
+        font-size: 0.9em;
+      }
+
+      .transmissao {
+        font-size: 1em;
+        padding: 12px 20px;
+      }
+    }
+
+    @media only screen and (max-width: 480px) {
+      h1 {
+        font-size: 1.5em;
+      }
+
+      .slogan {
+        font-size: 0.9em;
+        margin-bottom: 20px;
+      }
+
+      .countdown-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+      }
+
+      .countdown-item {
+        padding: 15px 5px;
+      }
+
+      .countdown-value {
+        font-size: 1.8em;
+      }
+
+      .countdown-label {
+        font-size: 0.8em;
+      }
+
+      .transmissao {
+        font-size: 0.9em;
+        padding: 10px 15px;
+        width: 95%;
+      }
+
+      footer {
+        font-size: 0.8em;
+      }
+    }
+
+    @media only screen and (max-height: 600px) {
+      body {
+        padding: 10px 0;
+        min-height: auto;
+        height: auto;
+      }
+
+      header img {
+        width: 80px;
+      }
+
+      .countdown-container {
+        margin-bottom: 15px;
+      }
     }
   </style>
 </head>
+
 <body>
-  <canvas id="fireworks"></canvas>
   <header>
-    <img src="logo.png" alt="Logo Conexão Acadêmica">
+    <img src="logo.png" alt="Logo Conexão Académica">
     <h1>Conexão Académica</h1>
     <div class="slogan">Transformando vidas com informação</div>
   </header>
 
-  <div class="countdown" id="contador"></div>
-  <div class="transmissao">
-    Acompanhe a transmissão oficial no dia 07 de junho de 2025 às 10h (horário de Brasília) às 15h (horário de Moçambique).<br>
-    Link será disponibilizado aqui próximo ao evento.
+  <div class="countdown-container">
+    <div class="countdown-title">Contagem Regressiva para Lançamento Oficial</div>
+    <div class="countdown-grid" id="contador">
+      <!-- O JavaScript vai preencher isso -->
+    </div>
   </div>
 
+  <div class="transmissao">
+    Acompanhe a transmissão oficial no dia 07 de junho de 2025 às 10h (horário 🇧🇷) e às 10h (horário 🇲🇿).<br>
+    Link estará disponibilizado aqui próximo ao evento.
+  </div>
 
-  
   <footer>
+  <div class="social-icons">
+    <a href="https://www.tiktok.com/@conexaoacademica258" target="_blank" aria-label="TikTok">
+      <i class="fab fa-tiktok"></i>
+    </a>
+    <a href="https://www.t.me/conexaoacademica" target="_blank" aria-label="Telegram">
+      <i class="fab fa-telegram-plane"></i>
+    </a>
+    <a href="https://www.facebook.com/@conexaoacademica258" target="_blank" aria-label="facebook">
+      <i class="fab fa-facebook"></i>
+    </a>
+    <a href="https://www.youtube.com/conexaoacademica-258" target="_blank" aria-label="YouTube">
+      <i class="fab fa-youtube"></i>
+    </a>
+    <a href="https://www.instagram.com/conexao_academica258" target="_blank" aria-label="Instagram">
+      <i class="fab fa-instagram"></i>
+    </a>
+  </div>
     &copy; 2025 Conexão Académica. Todos os direitos reservados.
   </footer>
 
@@ -120,9 +257,11 @@
       const agora = new Date().getTime();
       const tempoRestante = eventoData - agora;
 
-      if (tempoRestante <= 0) {
-        document.getElementById("contador").innerHTML = "O evento já começou!";
-        iniciarTransmissao();
+      if (tempoRestante < 0) {
+        document.getElementById("contador").innerHTML = `
+                    <div class="countdown-item" style="grid-column: 1 / -1;">
+                        <div class="countdown-value">O evento já começou!</div>
+                    </div>`;
         return;
       }
 
@@ -131,18 +270,31 @@
       const minutos = Math.floor((tempoRestante % (1000 * 60 * 60)) / (1000 * 60));
       const segundos = Math.floor((tempoRestante % (1000 * 60)) / 1000);
 
-      document.getElementById("contador").innerHTML =
-        `${dias}d ${horas}h ${minutos}m ${segundos}s`;
+      document.getElementById("contador").innerHTML = `
+                <div class="countdown-item">
+                    <div class="countdown-value">${dias}</div>
+                    <div class="countdown-label">Dias</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-value">${horas}</div>
+                    <div class="countdown-label">Horas</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-value">${minutos}</div>
+                    <div class="countdown-label">Minutos</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-value">${segundos}</div>
+                    <div class="countdown-label">Segundos</div>
+                </div>`;
     };
 
     const iniciarTransmissao = () => {
       document.body.innerHTML = `
-        <h1>Transmissão ao vivo do Lançamento do Projeto "Conexão Acadêmica"</h1>
-        <div class="video-container">
-          <iframe src="https://www.youtube.com/embed/0pQ9YoBJPXc?autoplay=1" frameborder="0" allowfullscreen></iframe>
-        </div>
-        <canvas id="fireworks"></canvas>
-      `;
+                <h1>Transmissão ao vivo - Conexão Académica</h1>
+                <iframe width="100%" height="500" src="https://www.youtube.com/embed/LINK_DA_LIVE?autoplay=1" frameborder="0" allowfullscreen></iframe>
+                <canvas id="fireworks"></canvas>
+            `;
       iniciarFogos();
     };
 
@@ -178,7 +330,7 @@
           p.alpha -= 0.01;
           ctx.beginPath();
           ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-          ctx.fillStyle = `rgba(255, ${Math.floor(Math.random()*255)}, ${Math.floor(Math.random()*255)}, ${p.alpha})`;
+          ctx.fillStyle = `rgba(255, ${Math.floor(Math.random() * 255)}, ${Math.floor(Math.random() * 255)}, ${p.alpha})`;
           ctx.fill();
         }
         particles = particles.filter(p => p.alpha > 0);
@@ -190,6 +342,8 @@
     }
 
     setInterval(atualizarContador, 1000);
+    atualizarContador(); // Chamada inicial para evitar delay
   </script>
 </body>
+
 </html>
