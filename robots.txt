@@ -1,4 +1,4 @@
 User-agent: *
-Disallow:
+Allow: /privado/
 
 Sitemap: https://conexacademica.com/sitemap.xml
